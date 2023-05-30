@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-//Base da URL: https://api.themoviedb.org/3/
-//URL da API: /movie/now_playing?api_key=e230d70de46c8bc751c0436148455bde
+//Base da URL: https:/api.mercadolibre.com/sites/MLB/
+//URL da API: https:/api.mercadolibre.com/sites/MLB/search?q=notebooks
 
 const api = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/',
+  baseURL: 'https:/api.mercadolibre.com/sites/',
 });
 
 export default api;

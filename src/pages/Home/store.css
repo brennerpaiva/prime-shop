@@ -1,0 +1,43 @@
+.container {
+    width: 1150px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.products-list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 50px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 190px;
+    height: 254px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+    background-color: transparent; 
+    text-align: center;  
+    margin-bottom: 30px;    
+    cursor: pointer;  
+    text-decoration: none;
+    color: #000;
+   }
+
+.card h5{
+    height: 36px;
+    overflow: hidden;
+    padding: 0 4px;
+}
+
+.card img{
+    height: 100px;
+    object-fit: cover;
+}
+
+.card span{
+    font-size: 14px
+}
