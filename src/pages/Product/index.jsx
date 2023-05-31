@@ -7,6 +7,7 @@ import { useState } from 'react';
 export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -15,6 +16,7 @@ export default function Product() {
           `https://api.mercadolibre.com/items/${id}`
         );
         setProduct(response.data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -23,17 +25,74 @@ export default function Product() {
     fetchProduct();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="loading">
+        <h1>Carregando detalhes...</h1>
+      </div>
+    );
+  }
+
   return (
-    <div className="product-details">
-      <h1>{product.title}</h1>
-      {product.pictures && product.pictures.length > 0 && (
-        <>
-          <img src={product.pictures[0].url} alt="Product Image 1" />
-          <img src={product.pictures[1].url} alt="Product Image 2" />
-          <img src={product.pictures[2].url} alt="Product Image 3" />
-          <img src={product.pictures[3].url} alt="Product Image 4" />
-        </>
-      )}
+    <div className="container">
+      <div className="product-details">
+        <div className="product-images">
+          {product.pictures && product.pictures.length > 0 && (
+            <>
+              <img src={product.pictures[0].url} alt="Product Image 1" />
+              <img src={product.pictures[1].url} alt="Product Image 2" />
+              <img src={product.pictures[2].url} alt="Product Image 3" />
+              <img src={product.pictures[3].url} alt="Product Image 4" />
+            </>
+          )}
+        </div>
+        <div className="product-info card-info-product">
+          <h3>{product.title}</h3>
+          <span>{product.price}</span>
+          <span> {product.warranty}</span>
+          <span>Quantidade Disponível: {product.available_quantity}</span>
+          <button>COMPRAR</button>
+          {/* <div className="seller">
+            <h5></h5>
+            <span>
+              {product.seller_address.city && product.seller_address.city.name}
+              {', '}
+              {product.seller_address.state && product.seller_address.state.name}
+            </span>
+          </div> */}
+        </div>
+      </div>
+      <div className="product-details-bottom">
+        <h3>Informações Sobre o Produto</h3>
+        {product.attributes && product.attributes.length > 0 && (
+          <ul>
+            <li>
+              {product.attributes[0].name}: {product.attributes[0].value_name}
+            </li>
+            <li>
+              {product.attributes[2].name}: {product.attributes[2].value_name}
+            </li>
+            <li>
+              {product.attributes[3].name}: {product.attributes[3].value_name}
+            </li>
+            <li>
+              {product.attributes[4].name}: {product.attributes[4].value_name}
+            </li>
+            <li>
+              {product.attributes[5].name}: {product.attributes[5].value_name}
+            </li>
+            <li>
+              {product.attributes[6].name}: {product.attributes[6].value_name}
+            </li>
+            <li>
+              {product.attributes[7].name}: {product.attributes[7].value_name}
+            </li>
+            <li>
+              {product.attributes[8].name}: {product.attributes[8].value_name}
+            </li>
+          </ul>
+        )}
+      </div>
     </div>
   );
 }
