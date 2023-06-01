@@ -1,0 +1,19 @@
+.card-cart{
+    width: 800px;
+    height: 130px;
+    background: #ffff;
+    box-shadow: 0 1px 25px rgba(0,0,0,0.2);
+    border: 1px solid black;
+    margin-bottom: 50px;
+    padding: 12px 10px;
+    display: flex;
+  }
+
+  .card-cart img{
+    width: 150px;
+  }
+
+  .card-cart .info{
+    display: flex;
+    flex-direction: column;
+  }

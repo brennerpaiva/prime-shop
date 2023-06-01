@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import './navbar.css';
 export default function Navbar() {
   const cartNumber = useSelector((state) => state.purchase.length);
-  console.log(cartNumber);
 
   return (
     <header>

@@ -1,15 +1,32 @@
 import './cart.css';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Cart() {
+  const purchases = useSelector((state) => state.purchase);
+  const dispatch = useDispatch();
+
+  function removeFromCart(id) {
+    dispatch({
+      type: 'REMOVE_CART',
+      id,
+    });
+  }
+
   return (
-    <div>
-      <h1>Cart</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex suscipit
-        aliquam maiores iusto, repudiandae dolorum voluptate doloremque. Velit
-        dignissimos quisquam ullam vero in magni necessitatibus amet. Quae odit
-        eligendi tempora.
-      </p>
+    <div className="container">
+      <h3>Seu Carrinho</h3>
+      {purchases.map((purchase) => (
+        <div className="card-cart" key={purchase.id}>
+          <img src={purchase.pictures[0].url} alt={purchase.title} />
+
+          <div className="info">
+            <span>{purchase.title}</span>
+            <span>Quantidade: {purchase.amount}</span>
+          </div>
+          {console.log(purchase)}
+          <button onClick={() => removeFromCart(purchase.id)}>Remover</button>
+        </div>
+      ))}
     </div>
   );
 }
