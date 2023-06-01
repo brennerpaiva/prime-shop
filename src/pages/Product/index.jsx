@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { addProduct } from '../../store/modules/purchase/actions';
 
 export default function Product() {
   const { id } = useParams();
@@ -28,10 +29,7 @@ export default function Product() {
   }, []);
 
   function handleAdd(product) {
-    dispatch({
-      type: 'ADD_CART',
-      product,
-    });
+    dispatch(addProduct(product));
   }
 
   if (loading) {

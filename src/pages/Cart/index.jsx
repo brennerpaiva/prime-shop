@@ -1,15 +1,13 @@
 import './cart.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { removeProduct } from '../../store/modules/purchase/actions';
 
 export default function Cart() {
   const purchases = useSelector((state) => state.purchase);
   const dispatch = useDispatch();
 
   function removeFromCart(id) {
-    dispatch({
-      type: 'REMOVE_CART',
-      id,
-    });
+    dispatch(removeProduct(id));
   }
 
   return (
