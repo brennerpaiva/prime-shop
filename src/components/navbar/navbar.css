@@ -31,30 +31,35 @@ header {
     color: gray;
 }
 
-.logo ion-icon{
-    font-size: 30px;
-    color: #37A695;
-}
 
 .nav {
     display: flex;
     justify-content: center;
 }
 
+
 .favorites {
+    display: flex;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 24px;
     cursor: pointer;
+    color: #fff;
     background-color: gray;
     padding: 10px 14px;
     text-decoration: none;
-    color: #e6e6e6;
     border-radius: 20px;
     transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
 }
 
 .favorites:hover {
     background-color: #268765;
+}
+
+.favorites ion-icon{
+    background-color: transparent;
+    font-size: 24px;
 }
 
 .search {
@@ -126,9 +131,6 @@ header {
     
     }  
 
-    .logo ion-icon {
-        font-size: 21px;
-    }
 
 
     .search {

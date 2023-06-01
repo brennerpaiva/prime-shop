@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './navbar.css';
-import purchase from '../../store/modules/purchase/reducer';
 export default function Navbar() {
   const cartNumber = useSelector((state) => state.purchase.length);
   console.log(cartNumber);
@@ -22,8 +21,9 @@ export default function Navbar() {
             />
             <button>teste</button>
           </div> */}
-          <Link className="favorites" to="/">
-            Meu Carrinho {cartNumber}
+          <Link className="favorites" to="/cart">
+            <ion-icon className="icone" name="cart-outline"></ion-icon>{' '}
+            {cartNumber}
           </Link>
           <span></span>
         </div>
