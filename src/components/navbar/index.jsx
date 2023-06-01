@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './navbar.css';
+import purchase from '../../store/modules/purchase/reducer';
 export default function Navbar() {
+  const cartNumber = useSelector((state) => state.purchase.length);
+  console.log(cartNumber);
+
   return (
     <header>
       <div className="max-width">
@@ -17,9 +22,10 @@ export default function Navbar() {
             />
             <button>teste</button>
           </div> */}
-          <Link className="favorites" to="/favorites">
-            Meus Produtos
+          <Link className="favorites" to="/">
+            Meu Carrinho {cartNumber}
           </Link>
+          <span></span>
         </div>
       </div>
     </header>

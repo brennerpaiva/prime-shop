@@ -3,11 +3,13 @@ import './product.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -24,6 +26,13 @@ export default function Product() {
 
     fetchProduct();
   }, []);
+
+  function handleAdd(product) {
+    dispatch({
+      type: 'ADD_CART',
+      product,
+    });
+  }
 
   if (loading) {
     return (
@@ -51,7 +60,7 @@ export default function Product() {
           <span>{product.price}</span>
           <span> {product.warranty}</span>
           <span>Quantidade Disponível: {product.available_quantity}</span>
-          <button>COMPRAR</button>
+          <button onClick={() => handleAdd(product)}>COMPRAR</button>
           {/* <div className="seller">
             <h5></h5>
             <span>
