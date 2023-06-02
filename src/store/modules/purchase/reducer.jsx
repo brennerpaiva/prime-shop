@@ -10,8 +10,8 @@ export default function purchase(state = [], action) {
           (product) => product.id === action.product.id
         );
 
-        if (productIndex >= 1) {
-          draft[productIndex].amount += 1;
+        if (productIndex >= 0) {
+          return state;
         } else {
           draft.push({
             ...action.product,
@@ -29,6 +29,23 @@ export default function purchase(state = [], action) {
           draft.splice(productIndex, 1);
         }
       });
+
+    case 'UPDATE_CART':
+      if (action.amount <= 0) {
+        return state;
+      } else if (action.amount > action.stock) {
+        return alert('Verifique a disponibilidade do Estoque'), state;
+      }
+      return produce(state, (draft) => {
+        const productIndex = draft.findIndex(
+          (product) => product.id === action.id
+        );
+
+        if (productIndex >= 0) {
+          draft[productIndex].amount = Number(action.amount);
+        }
+      });
+
     default:
       return state;
   }

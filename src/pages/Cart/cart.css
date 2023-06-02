@@ -1,19 +1,72 @@
+.container {
+  margin: 0 auto;
+}
+
 .card-cart{
-    width: 800px;
-    height: 130px;
-    background: #ffff;
-    box-shadow: 0 1px 25px rgba(0,0,0,0.2);
-    border: 1px solid black;
-    margin-bottom: 50px;
-    padding: 12px 10px;
-    display: flex;
-  }
+  margin: 0 auto;
+  width: 1000px;
+  height: 130px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
+  background-color: transparent; 
+  margin-bottom: 30px;    
+  text-decoration: none;
+  color: #000; 
+  display: flex;
+  justify-content: space-around;     
+}
 
-  .card-cart img{
-    width: 150px;
-  }
+.card-cart .image {
+  width: 20%;
+}
 
-  .card-cart .info{
-    display: flex;
-    flex-direction: column;
-  }
+.card-cart .image img{
+  width: 200px;
+  object-fit: contain;
+  height: 100%;
+}
+
+.card-cart .info{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-cart .buttons {
+  display: flex;
+  width: 20%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.card-cart .buttons input {
+    width: 12px;
+    text-align: center;
+    border: none;
+    font-size: 20px; 
+    margin: 0 8px;
+}
+
+
+.card-cart .buttons button ion-icon{
+  font-size: 20px;
+}
+
+.card-cart .buttons button{
+  cursor: pointer;
+  border: none;
+  padding: 4px 8px;
+  background-color: transparent;
+  border-radius: 4px;
+  margin: 0 8px;
+}
+

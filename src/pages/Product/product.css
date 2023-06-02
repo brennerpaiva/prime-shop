@@ -53,7 +53,7 @@
 
 
 
-button {
+.product-info button {
     --color: #560bad;
     font-family: inherit;
     display: inline-block;
@@ -73,7 +73,7 @@ button {
     cursor: pointer;
    }
    
-button:before {
+.product-info button:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -83,22 +83,22 @@ button:before {
     border-radius: 50%;
    }
    
-button:hover {
+.product-info button:hover {
     color: #fff;
    }
    
-button:before {
+.product-info button:before {
     top: 100%;
     left: 100%;
     transition: all .7s;
    }
 
-button:hover:before {
+.product-info button:hover:before {
     top: -30px;
     left: -30px;
    }
    
-button:active:before {
+.product-info button:active:before {
     background: #3a0ca3;
     transition: background 0s;
    }
