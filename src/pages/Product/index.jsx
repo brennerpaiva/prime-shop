@@ -5,6 +5,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../store/modules/purchase/actions';
+const currentDate = new Date();
+const futureDate = new Date(currentDate.getTime() + 6 * 24 * 60 * 60 * 1000);
+const options = { day: 'numeric', month: 'long' };
+const formattedDate = futureDate.toLocaleDateString('pt-BR', options);
 
 export default function Product() {
   const { id } = useParams();
@@ -42,8 +46,19 @@ export default function Product() {
 
   if (loading) {
     return (
-      <div className="loading">
-        <h1>Carregando detalhes...</h1>
+      <div class="loader">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+        <div class="bar7"></div>
+        <div class="bar8"></div>
+        <div class="bar9"></div>
+        <div class="bar10"></div>
+        <div class="bar11"></div>
+        <div class="bar12"></div>
       </div>
     );
   }
@@ -75,14 +90,18 @@ export default function Product() {
             <br />
             <span>12x de {calculatePrice(product.price)}</span>
             <br />
-            <span> {product.warranty}</span>
+            <span>Previsão de Entrega {formattedDate}</span>
+            <br />
+            <span>Frete Grátis</span>
           </div>
 
           <div className="card-buttons">
             <span>Quantidade Disponível: {product.available_quantity}</span>
             <button onClick={() => handleAdd(product)}>COMPRAR</button>
-            <button>Wishlist </button>
+            <button>WISHLIST </button>
           </div>
+          <span> {product.warranty}</span>
+
           {/* <div className="seller">
             <h5></h5>
             <span>
