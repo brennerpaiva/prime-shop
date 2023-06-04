@@ -4,6 +4,7 @@ import {
   removeProduct,
   updateAmountProduct,
 } from '../../store/modules/purchase/actions';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
   const purchases = useSelector((state) => state.purchase);
@@ -38,9 +39,28 @@ export default function Cart() {
           </div>
 
           <div className="info">
-            <span>{purchase.title}</span>
+            <Link to={`/product/${purchase.id}`}>
+              <span>{purchase.title}</span>
+            </Link>
             <span>
-              Valor: {purchase.amount * purchase.price.toLocaleString('pt-BR')}
+              Valor Unitário:{' '}
+              {purchase.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </span>
+          </div>
+          <div className="price">
+            <span>
+              <strong>Valor Total</strong>
+            </span>
+            <span>
+              <strong>
+                {(purchase.amount * purchase.price).toLocaleString('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </strong>
             </span>
           </div>
           <div className="buttons">

@@ -1,4 +1,3 @@
-
 .loader {
     position: relative;
     width: 54px;
@@ -89,38 +88,44 @@
     transform: rotate(330deg) translate(0, -130%);
     animation-delay: -0.1s;
   }
+
 .product-details {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
+    gap: 5%;
    
 }
 
+.container{
+    padding: 0;
+}
+
 .product-images{
-    width: 68%;  
+    width: 60%;  
+    margin: 0 auto;
 }
 
 .product-images img{
     padding: 10px;
-   
     object-fit: contain;
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
   
 }
 
 .product-info {
-    width: 30%;
+    width: 35%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 50px;
 }
 .product-info h3{
     background-color: transparent;
+    font-size: 24px;
 }
 
 .product-info .card-header, .card-price, .card-buttons{
@@ -132,39 +137,67 @@
 }
 
 
+.product-info .card-buttons{
+    display: flex;
+    
+}
+
+.product-info .card-buttons ion-icon{
+    background-color: transparent;
+    font-size: 16px;
+    
+}
+#wishlist{
+    width: 35%;
+    color: #0077ff;
+    background-color: transparent;
+}
+
+#wishlist:before{
+  background: #0077ff
+}
+
+#wishlist:hover {
+  color: #fff;
+ }
+
+ #wishlist:active:before {
+  background: #fff;
+  transition: background 0s;
+ }
 
 .product-info .card-buttons button {
-    --color: #560bad;
     font-family: inherit;
     display: inline-block;
-    width: 100%;
+    width: 65%;
     height: 2.6em;
     line-height: 2.5em;
     margin: 4px;
     position: relative;
     overflow: hidden;
-    border: 2px solid var(--color);
+    border: 2px solid #0077ff;
     transition: color .5s;
     z-index: 1;
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--color);
+    color: #fff;
     cursor: pointer;
+    background-color: #0077ff;
    }
    
 .product-info .card-buttons button:before {
     content: "";
     position: absolute;
     z-index: -1;
-    background: var(--color);
+    background: #fff  ;
     height: 150px;
     width: 500px;
     border-radius: 50%;
    }
    
 .product-info .card-buttons button:hover {
-    color: #fff;
+    color: #0077ff;
    }
    
 .product-info .card-buttons button:before {
@@ -179,7 +212,22 @@
    }
    
 .product-info button:active:before {
-    background: #3a0ca3;
+    background: #0077ff;
     transition: background 0s;
    }
+
+.product-details-bottom h3{
+    font-weight: 500;
+    color: #0077ff;
+}  
+
+.product-details-bottom ul{
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.product-details-bottom li {
+  margin-bottom: 6px;
+}
 

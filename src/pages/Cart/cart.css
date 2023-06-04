@@ -1,10 +1,11 @@
 .container {
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .card-cart{
   margin: 0 auto;
-  width: 1000px;
+  max-width: 1100px;
   height: 130px;
   border-radius: 20px;
   background: #e0e0e0;
@@ -29,11 +30,27 @@
 }
 
 .card-cart .info{
-  width: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
- 
+}
+
+.card-cart .info a {
+  text-decoration: none;
+  color: #0077ff;
+}
+
+.card-cart .price{
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-cart .price span{
+  padding: 8px 4px;
 }
 
 

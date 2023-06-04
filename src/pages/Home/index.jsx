@@ -13,7 +13,7 @@ export default function Store() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https:/api.mercadolibre.com/sites/MLB/search?q=notebooks'
+          'https:/api.mercadolibre.com/sites/MLB/search?q=celulares'
         );
         setProducts(response.data.results);
         setLoading(false);
@@ -54,7 +54,6 @@ export default function Store() {
 
   return (
     <div className="container">
-      <h1>Store</h1>
       <div className="products-list">
         {products.map((item) => (
           <Link to={`/product/${item.id}`} key={item.id} className="card">

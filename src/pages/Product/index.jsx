@@ -6,9 +6,11 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../store/modules/purchase/actions';
 const currentDate = new Date();
-const futureDate = new Date(currentDate.getTime() + 6 * 24 * 60 * 60 * 1000);
+const futureDate = new Date(currentDate.getTime() + 4 * 24 * 60 * 60 * 1000);
+const futureDate2 = new Date(currentDate.getTime() + 6 * 24 * 60 * 60 * 1000);
 const options = { day: 'numeric', month: 'long' };
 const formattedDate = futureDate.toLocaleDateString('pt-BR', options);
+const formattedDate2 = futureDate2.toLocaleDateString('pt-BR', options);
 
 export default function Product() {
   const { id } = useParams();
@@ -67,7 +69,7 @@ export default function Product() {
     <div className="container">
       <div className="product-details">
         <div className="product-images">
-          {product.pictures && product.pictures.length > 0 && (
+          {product.pictures && product.pictures.length >= 4 && (
             <>
               <img src={product.pictures[0].url} alt="Product Image 1" />
               <img src={product.pictures[1].url} alt="Product Image 2" />
@@ -89,59 +91,69 @@ export default function Product() {
             </span>
             <br />
             <span>12x de {calculatePrice(product.price)}</span>
-            <br />
-            <span>Previsão de Entrega {formattedDate}</span>
-            <br />
-            <span>Frete Grátis</span>
           </div>
-
+          <span>Unidades disponíveis: {product.available_quantity}</span>
           <div className="card-buttons">
-            <span>Quantidade Disponível: {product.available_quantity}</span>
             <button onClick={() => handleAdd(product)}>COMPRAR</button>
-            <button>WISHLIST </button>
+            <button id="wishlist">
+              WISHLIST <ion-icon name="heart"></ion-icon>
+            </button>
           </div>
-          <span> {product.warranty}</span>
+          <span>Frete Grátis</span>
+          <span>
+            Previsão de entrega: Entre <strong>{formattedDate}</strong> e{' '}
+            <strong>{formattedDate2}</strong>
+          </span>
+          <br />
 
-          {/* <div className="seller">
-            <h5></h5>
-            <span>
-              {product.seller_address.city && product.seller_address.city.name}
-              {', '}
-              {product.seller_address.state && product.seller_address.state.name}
-            </span>
-          </div> */}
+          <div className="product-details-bottom">
+            <h3>Informações Sobre o Produto:</h3>
+            {product.attributes && product.attributes.length > 0 && (
+              <ul>
+                <li>
+                  {product.attributes[0].name}: {''}
+                  {product.attributes[0].value_name}
+                </li>
+                <li>
+                  {product.attributes[2].name}: {''}
+                  {product.attributes[2].value_name}
+                </li>
+                <li>
+                  {product.attributes[3].name}: {''}
+                  {product.attributes[3].value_name}
+                </li>
+                <li>
+                  {product.attributes[4].name}: {''}
+                  {product.attributes[4].value_name}
+                </li>
+                <li>
+                  {product.attributes[5].name}: {''}
+                  {product.attributes[5].value_name}
+                </li>
+                <li>
+                  {product.attributes[6].name}: {''}
+                  {product.attributes[6].value_name}
+                </li>
+                <li>
+                  {product.attributes[7].name}: {''}
+                  {product.attributes[7].value_name}
+                </li>
+                <li>
+                  {product.attributes[8].name}: {''}
+                  {product.attributes[8].value_name}
+                </li>
+                <li>
+                  {product.attributes[9].name}: {''}
+                  {product.attributes[9].value_name}
+                </li>
+                <li>
+                  {product.attributes[10].name}: {''}
+                  {product.attributes[10].value_name}
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="product-details-bottom">
-        <h3>Informações Sobre o Produto</h3>
-        {product.attributes && product.attributes.length > 0 && (
-          <ul>
-            <li>
-              {product.attributes[0].name}: {product.attributes[0].value_name}
-            </li>
-            <li>
-              {product.attributes[2].name}: {product.attributes[2].value_name}
-            </li>
-            <li>
-              {product.attributes[3].name}: {product.attributes[3].value_name}
-            </li>
-            <li>
-              {product.attributes[4].name}: {product.attributes[4].value_name}
-            </li>
-            <li>
-              {product.attributes[5].name}: {product.attributes[5].value_name}
-            </li>
-            <li>
-              {product.attributes[6].name}: {product.attributes[6].value_name}
-            </li>
-            <li>
-              {product.attributes[7].name}: {product.attributes[7].value_name}
-            </li>
-            <li>
-              {product.attributes[8].name}: {product.attributes[8].value_name}
-            </li>
-          </ul>
-        )}
       </div>
     </div>
   );
