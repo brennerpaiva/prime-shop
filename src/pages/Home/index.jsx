@@ -25,7 +25,10 @@ export default function Store() {
 
   function calculatePrice(price) {
     const valorParcela = price / 12;
-    return valorParcela.toLocaleString('pt-BR');
+    return valorParcela.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
   }
 
   return (
@@ -36,9 +39,14 @@ export default function Store() {
           <Link to={`/product/${item.id}`} key={item.id} className="card">
             <img src={item.thumbnail} alt="" />
             <h5>{item.title}</h5>
-            <span>R${item.price.toLocaleString('pt-BR')}</span>
+            <span>
+              {item.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </span>
             <br />
-            <span>12x de R${calculatePrice(item.price)}</span>
+            <span>12x de {calculatePrice(item.price)}</span>
           </Link>
         ))}
       </div>

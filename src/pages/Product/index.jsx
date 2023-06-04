@@ -32,6 +32,14 @@ export default function Product() {
     dispatch(addProduct(product));
   }
 
+  function calculatePrice(price) {
+    const valorParcela = price / 12;
+    return valorParcela.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+  }
+
   if (loading) {
     return (
       <div className="loading">
@@ -53,12 +61,28 @@ export default function Product() {
             </>
           )}
         </div>
-        <div className="product-info card-info-product">
-          <h3>{product.title}</h3>
-          <span>{product.price}</span>
-          <span> {product.warranty}</span>
-          <span>Quantidade Disponível: {product.available_quantity}</span>
-          <button onClick={() => handleAdd(product)}>COMPRAR</button>
+        <div className="product-info">
+          <dvi className="card-header">
+            <h3>{product.title}</h3>
+          </dvi>
+          <div className="card-price">
+            <span className="strong">
+              {product.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </span>
+            <br />
+            <span>12x de {calculatePrice(product.price)}</span>
+            <br />
+            <span> {product.warranty}</span>
+          </div>
+
+          <div className="card-buttons">
+            <span>Quantidade Disponível: {product.available_quantity}</span>
+            <button onClick={() => handleAdd(product)}>COMPRAR</button>
+            <button>Wishlist </button>
+          </div>
           {/* <div className="seller">
             <h5></h5>
             <span>

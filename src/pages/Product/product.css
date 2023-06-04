@@ -11,8 +11,7 @@
 }
 
 .product-images{
-    width: 68%;
-    
+    width: 68%;  
 }
 
 .product-images img{
@@ -28,28 +27,21 @@
     width: 30%;
     height: 100%;
     display: flex;
-    margin: auto 0;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    
+    margin-top: 50px;
 }
 .product-info h3{
     background-color: transparent;
 }
 
-.card-info-product {
-    height: 500px;
-    border-radius: 20px;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
-    background-color: transparent; 
-    text-align: center;   
-    text-decoration: none;
-    color: #000;
-   }
+.product-info .card-header, .card-price, .card-buttons{
+    margin-bottom: 40px;
+}
+
+.product-info .card-price .strong{
+    font-size: 32px;
+}
 
 
 

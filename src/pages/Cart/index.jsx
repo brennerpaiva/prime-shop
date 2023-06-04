@@ -39,7 +39,9 @@ export default function Cart() {
 
           <div className="info">
             <span>{purchase.title}</span>
-            <span>Valor: {purchase.amount * purchase.price}</span>
+            <span>
+              Valor: {purchase.amount * purchase.price.toLocaleString('pt-BR')}
+            </span>
           </div>
           <div className="buttons">
             <span>
