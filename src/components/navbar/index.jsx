@@ -12,19 +12,13 @@ export default function Navbar() {
           Shop
         </Link>
         <div className="nav">
-          {/* <div className="search">
-            <input
-              id="input-movie"
-              type="text"
-              placeholder="Pesquise por um filme"
-            />
-            <button>teste</button>
-          </div> */}
+          <Link className="wishlist" to="/wishlist">
+            Wishlist<ion-icon name="heart-outline"></ion-icon>
+          </Link>
           <Link className="favorites" to="/cart">
             <ion-icon className="icone" name="cart-outline"></ion-icon>{' '}
             {cartNumber}
           </Link>
-          <span></span>
         </div>
       </div>
     </header>

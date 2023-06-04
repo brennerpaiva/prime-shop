@@ -1,0 +1,87 @@
+.card-wish{
+  margin: 0 auto;
+  max-width: 1100px;
+  height: 130px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
+  background-color: transparent; 
+  margin-bottom: 30px;    
+  text-decoration: none;
+  color: #000; 
+  display: flex;
+  justify-content: space-around;  
+}
+
+.card-wish .image {
+    width: 20%;
+  }
+  
+  .card-wish .image img{
+    width: 200px;
+    object-fit: contain;
+    height: 100%;
+  }
+  
+  .card-wish .name{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card-wish .name a {
+    text-decoration: none;
+    color: #0077ff;
+    padding: 4px;
+  }
+  
+  .card-wish .info{
+    display: inline-flex;
+    margin: 0 auto;
+  }
+
+  .card-wish .info .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .card-wish span{
+    padding: 12px 8px;
+  }
+
+  .card-wish .info .status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+  }
+  
+  
+  .card-wish .buttons {
+    display: flex;
+    width: 20%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .card-wish .buttons button ion-icon, .card-wish .buttons a ion-icon{
+    font-size: 24px;
+    color: #0d6dda;
+  }
+
+  .card-wish .buttons button{
+    cursor: pointer;
+    border: none;
+    padding: 4px 8px;
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0 8px;
+  }

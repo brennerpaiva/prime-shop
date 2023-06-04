@@ -37,6 +37,20 @@ header {
     justify-content: center;
 }
 
+.wishlist{
+    display: flex;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+}
 
 .favorites {
     display: flex;
@@ -53,9 +67,8 @@ header {
     justify-content: center;
 }
 
-.favorites:hover {
-    transform: scale(1.1);
-    color: #999999;
+.favorites:hover, .wishlist:hover {
+    color: #0d6dda;
 }
 
 .favorites ion-icon{

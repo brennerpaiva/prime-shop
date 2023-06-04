@@ -1,8 +1,8 @@
 import './cart.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  removeProduct,
-  updateAmountProduct,
+  removeProductCart,
+  updateAmountProductCart,
 } from '../../store/modules/purchase/actions';
 import { Link } from 'react-router-dom';
 
@@ -11,17 +11,17 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   function removeFromCart(id) {
-    dispatch(removeProduct(id));
+    dispatch(removeProductCart(id));
   }
 
   function decrementAmount(product) {
-    dispatch(updateAmountProduct(product.id, product.amount - 1));
+    dispatch(updateAmountProductCart(product.id, product.amount - 1));
     console.log(product);
   }
 
   function incrementAmount(product) {
     dispatch(
-      updateAmountProduct(
+      updateAmountProductCart(
         product.id,
         product.amount + 1,
         product.available_quantity
@@ -31,7 +31,7 @@ export default function Cart() {
 
   return (
     <div className="container">
-      <h3>Seu Carrinho</h3>
+      <h1>Seu Carrinho 🛒 </h1>
       {purchases.map((purchase) => (
         <div className="card-cart" key={purchase.id}>
           <div className="image">
@@ -80,7 +80,6 @@ export default function Cart() {
               </button>
             </span>
           </div>
-          {console.log(purchase)}
         </div>
       ))}
     </div>

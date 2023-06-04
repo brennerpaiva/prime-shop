@@ -30,7 +30,7 @@
 }
 
 .card-cart .info{
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 .card-cart .price{
-  width: 10%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;

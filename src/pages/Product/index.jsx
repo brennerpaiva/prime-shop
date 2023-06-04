@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../store/modules/purchase/actions';
+import { addProductCart } from '../../store/modules/purchase/actions';
+import { addProductWish } from '../../store/modules/wishlist/actions';
+
 const currentDate = new Date();
 const futureDate = new Date(currentDate.getTime() + 4 * 24 * 60 * 60 * 1000);
 const futureDate2 = new Date(currentDate.getTime() + 6 * 24 * 60 * 60 * 1000);
@@ -34,8 +36,12 @@ export default function Product() {
     fetchProduct();
   }, []);
 
-  function handleAdd(product) {
-    dispatch(addProduct(product));
+  function handleAddCart(product) {
+    dispatch(addProductCart(product));
+  }
+
+  function handleAddWish(product) {
+    dispatch(addProductWish(product));
   }
 
   function calculatePrice(price) {
@@ -94,8 +100,8 @@ export default function Product() {
           </div>
           <span>Unidades disponíveis: {product.available_quantity}</span>
           <div className="card-buttons">
-            <button onClick={() => handleAdd(product)}>COMPRAR</button>
-            <button id="wishlist">
+            <button onClick={() => handleAddCart(product)}>COMPRAR</button>
+            <button id="wishlist" onClick={() => handleAddWish(product)}>
               WISHLIST <ion-icon name="heart"></ion-icon>
             </button>
           </div>
