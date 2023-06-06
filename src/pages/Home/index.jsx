@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 export default function Store() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [valorParcela, setValorParcela] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
