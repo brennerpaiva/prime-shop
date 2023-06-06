@@ -34,7 +34,7 @@ export default function purchase(state = [], action) {
       if (action.amount <= 0) {
         return state;
       } else if (action.amount > action.stock) {
-        return alert('Verifique a disponibilidade do Estoque'), state;
+        return alert('Verifique a disponibilidade do Estoque') + state;
       }
       return produce(state, (draft) => {
         const productIndex = draft.findIndex(
