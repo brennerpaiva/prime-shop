@@ -41,16 +41,16 @@ export default function Wishlist() {
               <span>
                 <strong>Status</strong>
               </span>
-              <span>Disponível</span>
+              <span>Em estoque</span>
             </div>
           </div>
           <div className="buttons">
             <span>
               <Link to={`/product/${product.id}`}>
-                <ion-icon name="eye"></ion-icon>
+                <ion-icon name="eye-outline"></ion-icon>
               </Link>
               <button onClick={() => removeFromWish(product.id)}>
-                <ion-icon name="trash"></ion-icon>
+                <ion-icon name="heart-dislike-outline"></ion-icon>
               </button>
             </span>
           </div>

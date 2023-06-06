@@ -113,48 +113,42 @@ export default function Product() {
           <br />
 
           <div className="product-details-bottom">
-            <h3>Informações Sobre o Produto:</h3>
+            <h3>Descrição:</h3>
             {product.attributes && product.attributes.length > 0 && (
               <ul>
                 <li>
-                  {product.attributes[0].name}: {''}
+                  <strong>{product.attributes[0].name}:</strong> {''}
                   {product.attributes[0].value_name}
                 </li>
                 <li>
-                  {product.attributes[2].name}: {''}
+                  <strong>{product.attributes[2].name}:</strong> {''}
                   {product.attributes[2].value_name}
                 </li>
                 <li>
-                  {product.attributes[3].name}: {''}
+                  <strong>
+                    <strong>{product.attributes[3].name}:</strong> {''}
+                  </strong>
                   {product.attributes[3].value_name}
                 </li>
                 <li>
-                  {product.attributes[4].name}: {''}
+                  <strong>{product.attributes[4].name}:</strong> {''}
                   {product.attributes[4].value_name}
                 </li>
                 <li>
-                  {product.attributes[5].name}: {''}
+                  <strong>{product.attributes[5].name}:</strong> {''}
                   {product.attributes[5].value_name}
                 </li>
                 <li>
-                  {product.attributes[6].name}: {''}
+                  <strong>{product.attributes[6].name}:</strong> {''}
                   {product.attributes[6].value_name}
                 </li>
                 <li>
-                  {product.attributes[7].name}: {''}
+                  <strong>{product.attributes[7].name}:</strong> {''}
                   {product.attributes[7].value_name}
                 </li>
                 <li>
-                  {product.attributes[8].name}: {''}
+                  <strong>{product.attributes[8].name}:</strong> {''}
                   {product.attributes[8].value_name}
-                </li>
-                <li>
-                  {product.attributes[9].name}: {''}
-                  {product.attributes[9].value_name}
-                </li>
-                <li>
-                  {product.attributes[10].name}: {''}
-                  {product.attributes[10].value_name}
                 </li>
               </ul>
             )}

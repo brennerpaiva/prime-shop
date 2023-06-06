@@ -55,12 +55,10 @@ export default function Cart() {
               <strong>Valor Total</strong>
             </span>
             <span>
-              <strong>
-                {(purchase.amount * purchase.price).toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </strong>
+              {(purchase.amount * purchase.price).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
             </span>
           </div>
           <div className="buttons">
@@ -76,7 +74,7 @@ export default function Cart() {
                 onClick={() => removeFromCart(purchase.id)}
                 className="remove"
               >
-                <ion-icon name="trash-outline"></ion-icon>
+                <ion-icon name="trash-bin-outline"></ion-icon>
               </button>
             </span>
           </div>

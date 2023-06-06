@@ -14,8 +14,14 @@
   justify-content: space-around;  
 }
 
+.card-wish span{
+  padding: 12px 12px;
+}
+
 .card-wish .image {
     width: 20%;
+    display: flex;
+    justify-content: center;
   }
   
   .card-wish .image img{
@@ -25,7 +31,7 @@
   }
   
   .card-wish .name{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,11 +41,18 @@
     text-decoration: none;
     color: #0077ff;
     padding: 4px;
+    
+  }
+
+  .card-wish .name a span{
+    background-color: transparent;
   }
   
   .card-wish .info{
     display: inline-flex;
     margin: 0 auto;
+    width: 20%;
+    justify-content: center;
   }
 
   .card-wish .info .price{
@@ -47,10 +60,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-  }
-  
-  .card-wish span{
-    padding: 12px 8px;
   }
 
   .card-wish .info .status{
@@ -73,6 +82,7 @@
   }
   
   .card-wish .buttons button ion-icon, .card-wish .buttons a ion-icon{
+    padding: 0 8px;
     font-size: 24px;
     color: #0d6dda;
   }
