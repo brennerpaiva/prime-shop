@@ -34,7 +34,7 @@ export default function Product() {
     };
 
     fetchProduct();
-  }, []);
+  });
 
   function handleAddCart(product) {
     dispatch(addProductCart(product));
@@ -77,10 +77,10 @@ export default function Product() {
         <div className="product-images">
           {product.pictures && product.pictures.length >= 4 && (
             <>
-              <img src={product.pictures[0].url} alt="Product Image 1" />
-              <img src={product.pictures[1].url} alt="Product Image 2" />
-              <img src={product.pictures[2].url} alt="Product Image 3" />
-              <img src={product.pictures[3].url} alt="Product Image 4" />
+              <img src={product.pictures[0].url} alt={product.title} />
+              <img src={product.pictures[1].url} alt={product.title} />
+              <img src={product.pictures[2].url} alt={product.title} />
+              <img src={product.pictures[3].url} alt={product.title} />
             </>
           )}
         </div>
